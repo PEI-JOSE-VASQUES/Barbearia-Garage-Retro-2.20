@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Teste</title>
+   <style>
+   .todos {
+position: absolute;
+       display: flex;
+       height: 27px;
+       flex-direction: row;
+       align-items: center;
+       justify-content: center;
+       border: 1px blue solid;
+       border-radius: 2px;
+       border-top-right-radius: 50px;
+       border-bottom-right-radius: 50px;
+       border-top-left-radius: 10px;
+       border-bottom-left-radius: 10px;
+       background: rgb(151, 151, 243);
+       margin: 2px;
+       overflow: hidden;
+       z-index: 9999; /* Coloque um valor alto para garantir que fique acima de tudo */
+   }
+   .todos1 {
+       border: 1px black solid;
+       margin: 3px;
+       width: 110px;
+       display: flex;
+       height: auto;
+       flex-direction: row;
+       align-items: center;
+       justify-content: flex-start;
+       padding: 0px;
+       border: 1px blue solid;
+       border-radius: 2px;
+       border-top-right-radius: 50px;
+       border-bottom-right-radius: 50px;
+       border-top-left-radius: 10px;
+       border-bottom-left-radius: 10px;
+       background: rgb(151, 151, 243);
+       overflow: hidden;
+   }
+   #mestre {
+       top: 0px;
+       left: 0px;
+       width: 170px;
+       height: auto;
+       overflow: hidden;
+   }
+   .p {
+       color: rgb(255, 255, 255);
+       margin: 0px;
+       font-size: 14pt;
+       margin-left: 4px;
+   }
+   .img_c {
+       width: 30px;
+       margin-bottom: 0px;
+       border: 0px;
+       height: 24px;
+   }
+   </style>
+</head>
+<body>
+  <div id="mestre">
+   <div style="display: block;" onclick="fun()" class="todos" id="gr"> 
+      <div style="width: 100%; height: 100%; display: flex; flex-direction: row;">       
+         <h2 style="margin: 0px; border: 0px; color: aliceblue; font-size: 13pt; margin-top: 5px; margin-left: 3px;">Selecione o Profissional:</h2>
+      <img style="margin-bottom: 0px; margin-left: 5px; margin-right: 0px; border-radius: 3px; border-radius: 50px;" src="logo.png" width="27px">
+   </div>
+</div> 
+
+   <div class="todos1" id="it1" style="visibility: hidden; cursor: context-menu; position: absolute; top:40px;" onclick="fun2(1)" >  <img class="img_c" src="https://barbeariaderespeito.s3.us-east-2.amazonaws.com/529/fotos-de-perfil/fun-779-981-min" ><p class="p">Jhonatan </p></div>
+   <div class="todos1" id="it2" style="visibility: hidden; cursor: context-menu; position: absolute; top:70px;" onclick="fun2(2)" >  <img class="img_c" src="https://barbeariaderespeito.s3.us-east-2.amazonaws.com/529/fotos-de-perfil/fun-781-964-min" ><p class="p">Alefer </p></div>
+   <div class="todos1" id="it3" style="visibility: hidden; cursor: context-menu; position: absolute; top:100px;" onclick="fun2(3)" >  <img class="img_c" src="https://barbeariaderespeito.s3.us-east-2.amazonaws.com/529/fotos-de-perfil/fun-1292-242-min" ><p class="p">Diego </p></div>
+   <div class="todos1" id="it4" style="visibility: hidden; cursor: context-menu; position: absolute; top:130px;" onclick="fun2(4)"  >  <img class="img_c" src="https://barbeariaderespeito.s3.us-east-2.amazonaws.com/529/fotos-de-perfil/fun-780-570-min"><p class="p">William </p></div>
+
+  </div> 
+  
+  <h1 id="res"></h1>
+  <script>
+      var pesqui = true;
+   
+function fecha(){
+   it1.style.visibility="hidden";
+   it2.style.visibility="hidden";
+   it3.style.visibility="hidden";
+   it4.style.visibility="hidden"; 
+   console.log("else: "+pesqui);
+   pesqui = true;
+}
+ function  fun(){
+   let it1 = window.document.getElementById("it1");
+   let it2 = window.document.getElementById("it2");
+   let it3 = window.document.getElementById("it3");
+   let it4 = window.document.getElementById("it4");
+   if(pesqui == true){
+   it1.style.visibility="visible";
+   it2.style.visibility="visible";
+   it3.style.visibility="visible";
+   it4.style.visibility="visible";
+   console.log("if: "+pesqui);
+   pesqui = false;
+   }
+   else{
+      fecha();
+   }
+ }
+
+
+
+
+ function  fun2(item){
+   let res = window.document.getElementById("res");
+   if(item ==1){
+      it1.style.background="blue";
+      it2.style.background="rgb(151, 151, 243)";
+      it3.style.background="rgb(151, 151, 243)";
+      it4.style.background="rgb(151, 151, 243)";
+      res.innerText="foi no if 1"; 
+     setTimeout(() => {
+      fecha();
+     }, 1000);
+
+   }
+   else if(item ==2){  
+      it1.style.background="rgb(151, 151, 243)";
+      it2.style.background="blue";
+      it3.style.background="rgb(151, 151, 243)";
+      it4.style.background="rgb(151, 151, 243)";
+      res.innerText="foi no if 2";      
+      setTimeout(() => {
+      fecha();
+     }, 1000);    }
+   
+      else if(item ==3){  
+      it1.style.background="rgb(151, 151, 243)";
+      it2.style.background="rgb(151, 151, 243)";
+      it3.style.background="blue";
+      it4.style.background="rgb(151, 151, 243)";
+      res.innerText="foi no if 2";  
+      setTimeout(() => {
+      fecha();
+     }, 1000);  }
+
+      else if(item ==4){  
+      it1.style.background="rgb(151, 151, 243)";
+      it2.style.background="rgb(151, 151, 243)";
+      it3.style.background="rgb(151, 151, 243)";
+      it4.style.background="blue";
+      res.innerText="foi no if 2";  
+      setTimeout(() => {
+      fecha();
+     }, 1000);  }
+   }
+
+
+
+
+
+  </script>
+</body>
+</html>

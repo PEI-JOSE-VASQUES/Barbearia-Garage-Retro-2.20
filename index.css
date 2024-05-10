@@ -1,0 +1,18 @@
+body {
+    background: #2b52a2;
+}
+#logo{
+opacity: 0;
+ width: 150px;
+  height: 150px;
+   border-radius: 90px;
+    position: absolute;
+     margin: auto;
+      top: 0px;
+      bottom: 0px;
+       left: 0px;
+        right: 0px;
+}
+.titulo_principal{
+color: white;
+}

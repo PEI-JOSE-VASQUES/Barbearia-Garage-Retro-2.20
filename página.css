@@ -1,0 +1,52 @@
+body {
+background-image: url("https://product-hub-prd.madeiramadeira.com.br/2273267/images/55a85d2a-1174-49d6-9c70-5171bd0207bb40382863papeldeparedeadesivopolodebarbeirovintager11536241600x600.jpg");
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-size: 70% 70%;
+
+height: 100vh;
+
+}
+.titulos_textos{
+
+     background: rgb(156, 155, 155);
+border-radius: 20px;
+    }
+#titulo_principal{
+padding: 5px;
+    color: white;
+font-size:20pt;
+margin: auto;
+margin-top: 6px;
+text-align: center;
+}
+#form{
+border-radius: 10px;
+margin-top:50px;
+background: rgb(170, 176, 198);
+width: 300px;
+height:120px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+#botao{
+margin-top: 16px;
+width:100px;
+color: whitesmoke;
+border:1px #2b52a2 solid;
+border-radius: 5px;
+background: #8686f1;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-size: 15pt;
+}
+.entrada{
+border-radius: 5px;
+border: 1px #2b52a2 solid;
+margin-top: -10px;
+}
+.logo{
+width: 200px;
+border-radius: 40px;
+}

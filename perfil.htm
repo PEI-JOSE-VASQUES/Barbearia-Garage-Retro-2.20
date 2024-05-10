@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Items</title>
+    <link rel="stylesheet" href="items_menu.css">
+</head>
+<body>
+<div style="margin-top: 50px; width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center; ">
+    <img style="border-radius: 20px; width: 230px;" id="im" src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png">
+</div>
+<div style="width: 100%;margin-top: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <button onclick="enviarFoto()" style="margin-bottom: 6vh; background: rgb(178, 53, 53); border-radius: 7px; border: none; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Enviar Foto</button>
+    <label style="color: aliceblue; font-size: 20pt; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Editar o seu nome</label>
+    <input id="nomeInput" style="width: 300px; border-radius: 6px; border: 1px blue solid; font-size: 27pt; height: 40px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" type="text">
+</div>
+<div style="width: 100%;margin-top: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <button onclick="b()" style="margin-top: 15vh; width: 216px;background: rgb(100, 106, 100); color: white; border-radius: 10px; font-size: 33pt;font-family:Arial, Helvetica, sans-serif; height: 50px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Concluido</button>
+    <script>
+        function b() {
+            open("menu.htm","_self");
+        }
+
+        function enviarFoto() {
+            Android.enviarFoto();
+        }   
+
+        function loadImage(imageUri) {
+            var img = document.getElementById('im');
+            if (imageUri && !isURL(imageUri)) {
+                // Substitui pela nova imagem
+                img.src = imageUri;
+            } else {
+                console.error("URI da imagem inválido: " + imageUri);
+            }
+        }
+
+        function isURL(str) {
+            var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocolo
+              '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domínio
+              '((\\d{1,3}\\.){3}\\d{1,3}))'+ // IP (v4) address
+              '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+              '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+              '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+            return !!pattern.test(str);
+        }
+    </script>
+</div>
+</body>
+</html>
